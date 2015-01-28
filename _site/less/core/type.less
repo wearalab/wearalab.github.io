@@ -1,0 +1,102 @@
+/*TYPE Configurations
+=============================*/
+
+@1: 100;
+@2: 200; @light: @2;
+@3: 300;
+@4: 400; @regular: @4;
+@5: 500;
+@6: 600;
+@7: 700; @bold: @7;
+@8: 800;
+@9: 900; @black: @9;
+
+@sans: "proxima-nova", "Helvetica", sans-serif;
+@seriff: "adobe-garamond-pro", "adobe garamond pro",sans-serif;
+
+/*FONT STYLE CONSTRUCTOR MIXIN
+=================================*/
+
+.font-style (
+  @style: normal;
+  @variant: normal;
+  @weight: normal;
+  @size: medium;
+  @line-height: normal;
+  @family: @body-font;
+  ) {
+  font-style: @style;
+  font-variant: @variant;
+  font-weight: @weight;
+  font-size: @size;
+  line-height: @line-height;
+  font-family: @family;
+}
+
+/*FONT INSTANCE MIXINS USING THE CONSTRUCTOR MIXIN
+=====================================================*/
+
+.body-style{
+  .font-style (
+    @style: normal;
+    @variant: normal;
+    @weight: @light;
+    @size: 100%;
+    @line-height: 1.5;
+    @family: @sans;
+    )
+  }
+
+body {
+  .body-style;
+  color: #7b7f83;
+  text-align: center;
+}
+
+.title-style{
+  .font-style (
+    @style: normal;
+    @variant: normal;
+    @weight: @bold;
+    @size: 150%;
+    @line-height: 1.5;
+    @family: @sans;
+    )
+}
+
+h1, h2, h3, h4, h5, h6 {
+  .title-style;
+}
+
+.nav-style{
+  .font-style (
+    @style: normal;
+    @variant: normal;
+    @weight: @light;
+    @size: 100%;
+    @line-height: 1.5;
+    @family: @sans;
+    )
+  }
+
+nav a {
+  .nav-style;
+  text-transform: uppercase;
+}
+
+section > header > h1 {
+  .title-style;
+  text-transform: uppercase;
+}
+
+.social-cta p {
+  font-family: @seriff;
+  font-size: 175%;
+  font-style: italic;
+}
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 200%;
+}//.title

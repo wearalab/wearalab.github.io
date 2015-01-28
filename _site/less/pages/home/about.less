@@ -1,0 +1,45 @@
+@import "../../core/lesshat.less";
+
+#about {
+  .about {
+    color: @turquoise;
+  }
+  .hr {
+    background-color: @turquoise;
+  }
+  .person{
+    display: block;
+    margin: 0 auto;
+    a {
+      width: 130px;
+      height: 150px;
+      display: block;
+      margin: 0 auto;
+      img{
+        border: 5px solid #f1f1f1;
+        max-width: 120px;
+        margin-bottom: 10px;
+        .border-radius(100%);
+        .transition-duration(0.4s);
+        }//img
+        &:hover img {
+          border:5px solid white;
+          .transform(scale(1.1,1.1));
+          .transition-duration(0.4s);
+        }
+    }
+    p {
+      color: @turquoise;
+      margin-top: 0;
+      span {
+        font-family: "Adobe Garamond Pro";
+        font-style: italic;
+      }//span
+    }//p
+  }//.person
+  .profile {
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+  }//.profile
+}
